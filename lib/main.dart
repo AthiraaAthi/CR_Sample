@@ -1,3 +1,4 @@
+import 'package:call_recorder_sample/view/home_screen/home_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +11,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp();
+    return CupertinoApp(
+      home: HomeScreen(),
+    );
   }
 }
