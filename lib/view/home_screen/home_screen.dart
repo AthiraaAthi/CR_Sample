@@ -7,6 +7,9 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
         navigationBar: CupertinoNavigationBar(middle: Text('Call Recorder')),
-        child: Column());
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [],
+        ));
   }
 }
