@@ -5,6 +5,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(child: Column());
+    return CupertinoPageScaffold(
+        navigationBar: CupertinoNavigationBar(middle: Text('Call Recorder')),
+        child: Column());
   }
 }
