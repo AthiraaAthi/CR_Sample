@@ -1,3 +1,4 @@
+import 'package:contacts_service/contacts_service.dart';
 import 'package:flutter/cupertino.dart';
 
 class ContactSelectionScreen extends StatefulWidget {
@@ -8,6 +9,8 @@ class ContactSelectionScreen extends StatefulWidget {
 }
 
 class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
+  List<Contact> contacts = [];
+
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(child: Column());
