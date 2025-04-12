@@ -13,7 +13,6 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
   Set<String> selectedNumbers = Set();
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
