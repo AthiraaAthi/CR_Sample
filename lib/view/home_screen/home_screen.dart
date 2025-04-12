@@ -16,6 +16,10 @@ class HomeScreen extends StatelessWidget {
                 onPressed: () => Navigator.pushNamed(context, '/contacts'),
               ),
               SizedBox(height: 20),
+              CupertinoButton.filled(
+                child: Text('View Recordings'),
+                onPressed: () => Navigator.pushNamed(context, '/recordings'),
+              ),
             ],
           ),
         ));
