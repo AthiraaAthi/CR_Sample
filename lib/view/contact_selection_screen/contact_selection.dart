@@ -10,6 +10,7 @@ class ContactSelectionScreen extends StatefulWidget {
 
 class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
   List<Contact> contacts = [];
+  Set<String> selectedNumbers = Set();
 
   @override
   Widget build(BuildContext context) {
