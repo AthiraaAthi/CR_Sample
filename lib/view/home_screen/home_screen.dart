@@ -10,7 +10,12 @@ class HomeScreen extends StatelessWidget {
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [],
+            children: [
+              CupertinoButton.filled(
+                child: Text('Select Contacts to Auto-Record'),
+                onPressed: () => Navigator.pushNamed(context, '/contacts'),
+              ),
+            ],
           ),
         ));
   }
