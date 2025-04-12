@@ -15,7 +15,9 @@ class MyApp extends StatelessWidget {
     return CupertinoApp(
       debugShowCheckedModeBanner: false,
       home: HomeScreen(),
-      routes: {},
+      routes: {
+        '/contacts': (context) => ContactSelectionScreen(),
+      },
     );
   }
 }
