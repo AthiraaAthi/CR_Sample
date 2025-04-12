@@ -15,6 +15,7 @@ class HomeScreen extends StatelessWidget {
                 child: Text('Select Contacts to Auto-Record'),
                 onPressed: () => Navigator.pushNamed(context, '/contacts'),
               ),
+              SizedBox(height: 20),
             ],
           ),
         ));
