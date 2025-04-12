@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
       home: HomeScreen(),
       routes: {
         '/contacts': (context) => ContactSelectionScreen(),
+        '/recordings': (context) => RecordingListScreen(),
       },
     );
   }
