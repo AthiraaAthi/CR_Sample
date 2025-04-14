@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_contacts/contact.dart';
 import 'package:flutter_contacts/flutter_contacts.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -46,6 +45,8 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
         selectedNumbers.add(number);
       }
     });
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setStringList('record_contacts', selectedNumbers.toList());
   }
 
   @override
