@@ -25,7 +25,10 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
     await Permission.storage.request();
   }
 
-  Future<void> loadContacts() async {}
+  Future<void> loadContacts() async {
+    if (await FlutterContacts.requestPermission()) {}
+  }
+
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(child: Column());
