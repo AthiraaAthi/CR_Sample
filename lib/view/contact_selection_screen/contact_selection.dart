@@ -39,7 +39,13 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
   }
 
   Future<void> toggleSelection(String number) async {
-    setState(() {});
+    setState(() {
+      if (selectedNumbers.contains(number)) {
+        selectedNumbers.remove(number);
+      } else {
+        selectedNumbers.add(number);
+      }
+    });
   }
 
   @override
