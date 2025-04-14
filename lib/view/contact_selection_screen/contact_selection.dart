@@ -38,6 +38,8 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
     }
   }
 
+  Future<void> toggleSelection(String number) async {}
+
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(child: Column());
