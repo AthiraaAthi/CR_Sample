@@ -30,6 +30,7 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
       final allContacts =
           await FlutterContacts.getContacts(withProperties: true);
       setState(() => contacts = allContacts);
+      final prefs = await SharedPreferences.getInstance();
     }
   }
 
