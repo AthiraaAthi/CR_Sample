@@ -29,6 +29,7 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
     if (await FlutterContacts.requestPermission()) {
       final allContacts =
           await FlutterContacts.getContacts(withProperties: true);
+      setState(() => contacts = allContacts);
     }
   }
 
