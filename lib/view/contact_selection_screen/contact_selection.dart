@@ -32,6 +32,7 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
       setState(() => contacts = allContacts);
       final prefs = await SharedPreferences.getInstance();
       final stored = prefs.getStringList('record_contacts') ?? [];
+      selectedNumbers = stored.toSet();
     }
   }
 
