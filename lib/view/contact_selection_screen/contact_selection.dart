@@ -26,7 +26,10 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
   }
 
   Future<void> loadContacts() async {
-    if (await FlutterContacts.requestPermission()) {}
+    if (await FlutterContacts.requestPermission()) {
+      final allContacts =
+          await FlutterContacts.getContacts(withProperties: true);
+    }
   }
 
   @override
