@@ -19,6 +19,7 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
 
   Future<void> requestPermissions() async {
     var status = await Permission.contacts.request();
+    if (status.isGranted) {}
   }
 
   @override
