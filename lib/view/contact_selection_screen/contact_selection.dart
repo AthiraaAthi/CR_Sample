@@ -17,7 +17,10 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
     super.initState();
   }
 
-  Future<void> requestPermissions() async {}
+  Future<void> requestPermissions() async {
+    var status = await Permission.contacts.request();
+  }
+
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(child: Column());
