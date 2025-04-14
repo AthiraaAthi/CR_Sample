@@ -38,7 +38,9 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
     }
   }
 
-  Future<void> toggleSelection(String number) async {}
+  Future<void> toggleSelection(String number) async {
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
