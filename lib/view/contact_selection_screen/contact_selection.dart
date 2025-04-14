@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_contacts/contact.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class ContactSelectionScreen extends StatefulWidget {
   const ContactSelectionScreen({super.key});
@@ -16,6 +17,7 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
     super.initState();
   }
 
+  Future<void> requestPermissions() async {}
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(child: Column());
