@@ -56,6 +56,7 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
         child: contacts.isEmpty
             ? Center(child: CupertinoActivityIndicator())
             : ListView.builder(
+                itemCount: contacts.length,
                 itemBuilder: (context, index) {
                   final contact = contacts[index];
                   final number = contact.phones.isNotEmpty
