@@ -57,6 +57,8 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
             ? Center(child: CupertinoActivityIndicator())
             : ListView.builder(
                 itemBuilder: (context, index) {
+                  final contact = contacts[index];
+
                   return CupertinoListTile(title: Text(""));
                 },
               ));
