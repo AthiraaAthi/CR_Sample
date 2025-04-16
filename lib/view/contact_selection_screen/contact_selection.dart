@@ -61,7 +61,7 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
                   final number = contact.phones.isNotEmpty
                       ? contact.phones.first.number
                       : '';
-
+                  final selected = selectedNumbers.contains(number);
                   return CupertinoListTile(title: Text(""));
                 },
               ));
