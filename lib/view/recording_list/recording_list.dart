@@ -20,7 +20,11 @@ class _RecordingListScreenState extends State<RecordingListScreen> {
   Future<void> loadRecordings() async {
     final dir = await getExternalStorageDirectory();
     final folder = Directory('${dir!.path}/CallRecordings');
-    if (await folder.exists()) {}
+    if (await folder.exists()) {
+      setState(() {
+        recordings = folder.listSync();
+      });
+    }
   }
 
   @override
