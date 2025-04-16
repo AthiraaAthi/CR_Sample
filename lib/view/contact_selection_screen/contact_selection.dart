@@ -53,6 +53,12 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
         navigationBar: CupertinoNavigationBar(middle: Text('Select Contacts')),
-        child: Column());
+        child: contacts.isEmpty
+            ? Center(child: CupertinoActivityIndicator())
+            : ListView.builder(
+                itemBuilder: (context, index) {
+                  return CupertinoListTile(title: Text(""));
+                },
+              ));
   }
 }
