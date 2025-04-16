@@ -58,6 +58,9 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
             : ListView.builder(
                 itemBuilder: (context, index) {
                   final contact = contacts[index];
+                  final number = contact.phones.isNotEmpty
+                      ? contact.phones.first.number
+                      : '';
 
                   return CupertinoListTile(title: Text(""));
                 },
