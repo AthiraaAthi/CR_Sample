@@ -66,6 +66,10 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
                   return CupertinoListTile(
                     title: Text(contact.displayName),
                     subtitle: Text(number),
+                    trailing: CupertinoSwitch(
+                      value: selected,
+                      onChanged: (_) => toggleSelection(number),
+                    ),
                   );
                 },
               ));
