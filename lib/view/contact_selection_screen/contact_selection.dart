@@ -51,6 +51,8 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(child: Column());
+    return CupertinoPageScaffold(
+        navigationBar: CupertinoNavigationBar(middle: Text('Select Contacts')),
+        child: Column());
   }
 }
