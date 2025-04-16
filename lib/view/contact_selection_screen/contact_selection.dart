@@ -65,6 +65,7 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
                   final selected = selectedNumbers.contains(number);
                   return CupertinoListTile(
                     title: Text(contact.displayName),
+                    subtitle: Text(number),
                   );
                 },
               ));
