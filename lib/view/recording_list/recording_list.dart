@@ -12,6 +12,11 @@ class RecordingListScreen extends StatefulWidget {
 class _RecordingListScreenState extends State<RecordingListScreen> {
   List<FileSystemEntity> recordings = [];
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       child: Column(),
