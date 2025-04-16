@@ -17,7 +17,9 @@ class _RecordingListScreenState extends State<RecordingListScreen> {
     super.initState();
   }
 
-  Future<void> loadRecordings() async {}
+  Future<void> loadRecordings() async {
+    final dir = await getExternalStorageDirectory();
+  }
 
   @override
   Widget build(BuildContext context) {
