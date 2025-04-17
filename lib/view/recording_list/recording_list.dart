@@ -42,6 +42,7 @@ class _RecordingListScreenState extends State<RecordingListScreen> {
                       if (await file.exists()) {
                         await Share.shareXFiles(
                           [XFile(file.path)],
+                          text: 'Sharing a recorded call',
                         );
                       }
                     },
