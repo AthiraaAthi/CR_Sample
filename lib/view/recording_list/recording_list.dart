@@ -39,6 +39,7 @@ class _RecordingListScreenState extends State<RecordingListScreen> {
               itemBuilder: (context, index) => GestureDetector(
                     onLongPress: () async {
                       final file = File(recordings[index].path);
+                      if (await file.exists()) {}
                     },
                   )),
     );
