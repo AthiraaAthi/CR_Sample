@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:share_plus/share_plus.dart';
 
 class RecordingListScreen extends StatefulWidget {
   const RecordingListScreen({super.key});
@@ -35,7 +36,9 @@ class _RecordingListScreenState extends State<RecordingListScreen> {
           ? Center(child: Text('No recordings found.'))
           : ListView.builder(
               itemCount: recordings.length,
-              itemBuilder: (context, index) => GestureDetector()),
+              itemBuilder: (context, index) => GestureDetector(
+                    onLongPress: () async {},
+                  )),
     );
   }
 }
