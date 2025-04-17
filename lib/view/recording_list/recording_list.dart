@@ -46,7 +46,8 @@ class _RecordingListScreenState extends State<RecordingListScreen> {
                     );
                   }
                 },
-                child: CupertinoListTile(title: Text("")),
+                child: CupertinoListTile(
+                    title: Text("recordings[index].path.split('/').last")),
               ),
             ),
     );
