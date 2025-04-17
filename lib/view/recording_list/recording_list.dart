@@ -50,6 +50,7 @@ class _RecordingListScreenState extends State<RecordingListScreen> {
                   title: Text(recordings[index].path.split('/').last),
                   onTap: () async {
                     final player = AudioPlayer();
+                    await player.play(DeviceFileSource(recordings[index].path));
                   },
                 ),
               ),
