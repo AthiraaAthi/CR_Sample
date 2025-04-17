@@ -1,5 +1,5 @@
 import 'dart:io';
-
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -30,7 +30,20 @@ class _RecordingListScreenState extends State<RecordingListScreen> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      child: Column(),
+      navigationBar: CupertinoNavigationBar(middle: Text('Recorded Calls')),
+      child: recordings.isEmpty
+          ? Center(child: Text('No recordings found.'))
+          : ListView.builder(
+              itemCount: recordings.length,
+              itemBuilder: (context, index) => CupertinoListTile(
+                leading: Icon(CupertinoIcons.play_arrow_solid),
+                title: Text(recordings[index].path.split('/').last),
+                onTap: () async {
+                  final player = AudioPlayer();
+                  await player.play(DeviceFileSource(recordings[index].path));
+                },
+              ),
+            ),
     );
   }
 }
