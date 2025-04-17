@@ -47,6 +47,7 @@ class _RecordingListScreenState extends State<RecordingListScreen> {
                   }
                 },
                 child: CupertinoListTile(
+                  leading: Icon(CupertinoIcons.play_arrow_solid),
                   title: Text(recordings[index].path.split('/').last),
                   onTap: () async {
                     final player = AudioPlayer();
