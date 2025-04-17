@@ -47,7 +47,7 @@ class _RecordingListScreenState extends State<RecordingListScreen> {
                   }
                 },
                 child: CupertinoListTile(
-                  title: Text("recordings[index].path.split('/').last"),
+                  title: Text(recordings[index].path.split('/').last),
                   onTap: () async {},
                 ),
               ),
