@@ -54,7 +54,19 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
     return CupertinoPageScaffold(
         navigationBar: CupertinoNavigationBar(middle: Text('Select Contacts')),
         child: contacts.isEmpty
-            ? Center(child: CupertinoActivityIndicator())
+            ? FutureBuilder(
+                future: Future.delayed(Duration(seconds: 2)),
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState != ConnectionState.done) {
+                    return Center(child: CupertinoActivityIndicator());
+                  } else {
+                    return Center(
+                        child: Text(
+                      'Add contacts',
+                      style: TextStyle(),
+                    ));
+                  }
+                })
             : ListView.builder(
                 itemCount: contacts.length,
                 itemBuilder: (context, index) {
