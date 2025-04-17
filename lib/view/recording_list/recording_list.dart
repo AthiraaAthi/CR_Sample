@@ -35,15 +35,7 @@ class _RecordingListScreenState extends State<RecordingListScreen> {
           ? Center(child: Text('No recordings found.'))
           : ListView.builder(
               itemCount: recordings.length,
-              itemBuilder: (context, index) => CupertinoListTile(
-                leading: Icon(CupertinoIcons.play_arrow_solid),
-                title: Text(recordings[index].path.split('/').last),
-                onTap: () async {
-                  final player = AudioPlayer();
-                  await player.play(DeviceFileSource(recordings[index].path));
-                },
-              ),
-            ),
+              itemBuilder: (context, index) => GestureDetector()),
     );
   }
 }
