@@ -64,6 +64,7 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
                     return Center(
                         child: Column(
                       mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
                           height: 50,
