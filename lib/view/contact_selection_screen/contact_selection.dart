@@ -75,6 +75,7 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
                             ),
                           ),
                         ),
+                        SizedBox(height: 10),
                         Text(
                           'Add contacts',
                           style: TextStyle(),
