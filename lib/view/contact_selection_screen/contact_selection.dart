@@ -65,8 +65,8 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
                         child: Column(
                       children: [
                         Container(
-                          height: 70,
-                          width: 70,
+                          height: 50,
+                          width: 50,
                           decoration: BoxDecoration(
                             image: DecorationImage(
                               image: AssetImage(addContactIcon),
