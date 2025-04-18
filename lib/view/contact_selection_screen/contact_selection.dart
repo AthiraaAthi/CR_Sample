@@ -63,6 +63,7 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
                     return Center(
                         child: Column(
                       children: [
+                        Container(),
                         Text(
                           'Add contacts',
                           style: TextStyle(),
