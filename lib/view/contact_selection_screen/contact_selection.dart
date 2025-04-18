@@ -55,7 +55,7 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
         navigationBar: CupertinoNavigationBar(middle: Text('Select Contacts')),
         child: contacts.isEmpty
             ? FutureBuilder(
-                future: Future.delayed(Duration(seconds: 2)),
+                future: Future.delayed(Duration(seconds: 3)),
                 builder: (context, snapshot) {
                   if (snapshot.connectionState != ConnectionState.done) {
                     return Center(child: CupertinoActivityIndicator());
