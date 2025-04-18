@@ -16,6 +16,7 @@ class _RecordingListScreenState extends State<RecordingListScreen> {
   @override
   void initState() {
     super.initState();
+    loadRecordings();
   }
 
   Future<void> loadRecordings() async {
