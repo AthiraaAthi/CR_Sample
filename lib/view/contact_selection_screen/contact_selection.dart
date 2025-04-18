@@ -1,3 +1,4 @@
+import 'package:call_recorder_sample/utils/image_constant/iamge_constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_contacts/flutter_contacts.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -66,6 +67,11 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
                         Container(
                           height: 70,
                           width: 70,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(addContactIcon),
+                            ),
+                          ),
                         ),
                         Text(
                           'Add contacts',
