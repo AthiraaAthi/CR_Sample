@@ -61,9 +61,13 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
                     return Center(child: CupertinoActivityIndicator());
                   } else {
                     return Center(
-                        child: Text(
-                      'Add contacts',
-                      style: TextStyle(),
+                        child: Column(
+                      children: [
+                        Text(
+                          'Add contacts',
+                          style: TextStyle(),
+                        ),
+                      ],
                     ));
                   }
                 })
