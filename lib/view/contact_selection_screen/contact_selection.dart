@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:call_recorder_sample/utils/image_constant/iamge_constant.dart';
+import 'package:call_recorder_sample/view/contact_selection_screen/cuper_tile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_contacts/flutter_contacts.dart';
 import 'package:path_provider/path_provider.dart';
@@ -112,8 +113,7 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
                       ? contact.phones.first.number
                       : '';
                   final selected = selectedNumbers.contains(number);
-                  return CupertinoListTile(
-                    ////import cupertile//////////////
+                  return CuperTile(
                     title: Text(contact.displayName),
                     subtitle: Text(number),
                     trailing: CupertinoSwitch(
