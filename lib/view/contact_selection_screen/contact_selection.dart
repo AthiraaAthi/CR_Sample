@@ -27,6 +27,22 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
     var status = await Permission.contacts.request();
     if (status.isGranted) {
       loadContacts();
+    } else {
+      showCupertinoDialog(
+        context: context,
+        builder: (context) => CupertinoAlertDialog(
+          title: Text('Permission Required'),
+          content: Text(
+              'Please allow contact permission to proceed with recordings.'),
+          actions: [
+            CupertinoDialogAction(
+              child: Text('OK'),
+              onPressed: () => Navigator.pop(context),
+            ),
+          ],
+        ),
+      );
+      return;
     }
     await Permission.storage.request();
   }
