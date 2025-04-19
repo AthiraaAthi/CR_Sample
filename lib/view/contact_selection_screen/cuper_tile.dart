@@ -23,6 +23,7 @@ class CuperTile extends StatelessWidget {
                     if (subtitle != null)
                       Padding(
                         padding: const EdgeInsets.only(top: 4),
+                        child: subtitle,
                       ),
                   ],
                 ),
