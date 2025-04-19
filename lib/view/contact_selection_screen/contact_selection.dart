@@ -113,4 +113,5 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
 Future<void> saveRecording(String fileName, List<int> audioBytes) async {
   final dir = await getExternalStorageDirectory();
   if (dir == null) return;
+  final folder = Directory('${dir.path}/CallRecordings');
 }
