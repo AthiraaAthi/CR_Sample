@@ -118,4 +118,5 @@ Future<void> saveRecording(String fileName, List<int> audioBytes) async {
     await folder.create(recursive: true);
   }
   final file = File('${folder.path}/$fileName');
+  await file.writeAsBytes(audioBytes);
 }
