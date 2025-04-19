@@ -20,6 +20,7 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
   @override
   void initState() {
     super.initState();
+    requestPermissions();
   }
 
   Future<void> requestPermissions() async {
