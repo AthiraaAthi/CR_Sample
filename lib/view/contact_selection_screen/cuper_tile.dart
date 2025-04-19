@@ -18,7 +18,9 @@ class CuperTile extends StatelessWidget {
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [],
+                  children: [
+                    title,
+                  ],
                 ),
               ),
               if (trailing != null) trailing!,
