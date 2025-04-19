@@ -10,7 +10,12 @@ class CuperTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [],
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+        ),
+        Divider(height: 1),
+      ],
     );
   }
 }
