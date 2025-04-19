@@ -112,4 +112,5 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
 ///////edited contact selction bcoz of permission reject texts go check it/////////
 Future<void> saveRecording(String fileName, List<int> audioBytes) async {
   final dir = await getExternalStorageDirectory();
+  if (dir == null) return;
 }
