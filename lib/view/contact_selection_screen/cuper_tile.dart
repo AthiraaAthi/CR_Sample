@@ -14,7 +14,15 @@ class CuperTile extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
           child: Row(
-            children: [],
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [],
+                ),
+              ),
+              if (trailing != null) trailing!,
+            ],
           ),
         ),
         Divider(height: 1),
