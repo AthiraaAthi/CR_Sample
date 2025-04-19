@@ -13,6 +13,9 @@ class CuperTile extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+          child: Row(
+            children: [],
+          ),
         ),
         Divider(height: 1),
       ],
