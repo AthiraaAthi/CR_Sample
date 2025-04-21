@@ -31,6 +31,8 @@ android {
         versionName = flutter.versionName
          minSdkVersion 21
          targetSdkVersion 30
+         compiledSdkVersion 30
+
     }
 
     buildTypes {
