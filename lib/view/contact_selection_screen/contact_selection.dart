@@ -28,7 +28,9 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
     if (!await Permission.contacts.request().isGranted) {
       await showCupertinoDialog(
         context: context,
-        builder: (context) => CupertinoAlertDialog(),
+        builder: (context) => CupertinoAlertDialog(
+          title: Text('Permission Required'),
+        ),
       );
       return;
     }
