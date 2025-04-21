@@ -35,6 +35,7 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
           actions: [
             CupertinoDialogAction(
               child: Text('Go to Settings'),
+              onPressed: () async {},
             ),
           ],
         ),
