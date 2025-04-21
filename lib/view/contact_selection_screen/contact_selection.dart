@@ -40,6 +40,9 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
                 Navigator.of(context).pop();
               },
             ),
+            CupertinoDialogAction(
+              child: Text('Cancel'),
+            ),
           ],
         ),
       );
