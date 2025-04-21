@@ -30,6 +30,8 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
         context: context,
         builder: (context) => CupertinoAlertDialog(
           title: Text('Permission Required'),
+          content: Text(
+              'Please allow contact permission to proceed with recordings.'),
         ),
       );
       return;
