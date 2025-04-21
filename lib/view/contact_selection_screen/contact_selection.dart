@@ -42,6 +42,7 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
             ),
             CupertinoDialogAction(
               child: Text('Cancel'),
+              onPressed: () => Navigator.pop(context),
             ),
           ],
         ),
