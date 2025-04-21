@@ -25,7 +25,13 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
   }
 
   Future<void> requestPermissions() async {
-    if (!await Permission.contacts.request().isGranted) {}
+    if (!await Permission.contacts.request().isGranted) {
+      await showCupertinoDialog(
+        context: context,
+        builder: (context) => CupertinoAlertDialog(),
+      );
+      return;
+    }
     if (!await Permission.storage.request().isGranted) {
       await Permission.storage.request();
     }
