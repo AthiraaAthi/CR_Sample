@@ -32,7 +32,11 @@ class _ContactSelectionScreenState extends State<ContactSelectionScreen> {
           title: Text('Permission Required'),
           content: Text(
               'Please allow contact permission to proceed with recordings.'),
-          actions: [],
+          actions: [
+            CupertinoDialogAction(
+              child: Text('Go to Settings'),
+            ),
+          ],
         ),
       );
       return;
