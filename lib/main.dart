@@ -28,6 +28,15 @@ Future<void> stopAndSaveRecording() async {
     importance: Importance.max,
     priority: Priority.high,
   );
+  const NotificationDetails platformChannelSpecifics =
+      NotificationDetails(android: androidPlatformChannelSpecifics);
+
+  await flutterLocalNotificationsPlugin.show(
+    1,
+    'Recording Saved',
+    'Saved to: $fileName',
+    platformChannelSpecifics,
+  );
 }
 
 void main() async {
