@@ -18,6 +18,7 @@ Future<void> stopAndSaveRecording() async {
   }
   final fileName = 'Recording_${DateTime.now().millisecondsSinceEpoch}.aac';
   final file = File('${folder.path}/$fileName');
+  await file.writeAsBytes([]);
 }
 
 void main() async {
