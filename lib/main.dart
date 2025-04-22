@@ -13,6 +13,9 @@ Future<void> stopAndSaveRecording() async {
   final dir = await getExternalStorageDirectory();
   if (dir == null) return;
   final folder = Directory('${dir.path}/CallRecordings');
+  if (!await folder.exists()) {
+    await folder.create(recursive: true);
+  }
 }
 
 void main() async {
