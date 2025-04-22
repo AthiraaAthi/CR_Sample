@@ -49,7 +49,7 @@ void main() async {
     initializationSettings,
     onDidReceiveNotificationResponse: (NotificationResponse response) {
       if (response.payload != null) {
-        stopAndSaveRecording(); // Implement this function
+        stopAndSaveRecording();
       }
     },
   );
