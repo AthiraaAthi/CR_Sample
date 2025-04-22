@@ -19,6 +19,9 @@ Future<void> stopAndSaveRecording() async {
   final fileName = 'Recording_${DateTime.now().millisecondsSinceEpoch}.aac';
   final file = File('${folder.path}/$fileName');
   await file.writeAsBytes([]);
+  await flutterLocalNotificationsPlugin.cancel(0);
+  debugPrint('Recording saved to: ${file.path}');
+  await flutterLocalNotificationsPlugin.cancel(0);
 }
 
 void main() async {
