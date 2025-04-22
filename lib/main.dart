@@ -20,8 +20,14 @@ Future<void> stopAndSaveRecording() async {
   final file = File('${folder.path}/$fileName');
   await file.writeAsBytes([]);
   await flutterLocalNotificationsPlugin.cancel(0);
-  debugPrint('Recording saved to: ${file.path}');
-  await flutterLocalNotificationsPlugin.cancel(0);
+  const AndroidNotificationDetails androidPlatformChannelSpecifics =
+      AndroidNotificationDetails(
+    'recording_saved_channel',
+    'Recording Saved',
+    channelDescription: 'Notifies when a call recording has been saved',
+    importance: Importance.max,
+    priority: Priority.high,
+  );
 }
 
 void main() async {
