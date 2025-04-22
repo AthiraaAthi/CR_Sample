@@ -9,7 +9,9 @@ import 'package:path_provider/path_provider.dart';
 
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin();
-Future<void> stopAndSaveRecording() async {}
+Future<void> stopAndSaveRecording() async {
+  final dir = await getExternalStorageDirectory();
+}
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
