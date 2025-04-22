@@ -2,7 +2,10 @@ import 'package:call_recorder_sample/view/contact_selection_screen/contact_selec
 import 'package:call_recorder_sample/view/home_screen/home_screen.dart';
 import 'package:call_recorder_sample/view/recording_list/recording_list.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
+final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+    FlutterLocalNotificationsPlugin();
 void main() {
   runApp(const MyApp());
 }
