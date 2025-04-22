@@ -16,6 +16,7 @@ Future<void> stopAndSaveRecording() async {
   if (!await folder.exists()) {
     await folder.create(recursive: true);
   }
+  final fileName = 'Recording_${DateTime.now().millisecondsSinceEpoch}.aac';
 }
 
 void main() async {
