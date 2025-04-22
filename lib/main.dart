@@ -11,6 +11,7 @@ final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin();
 Future<void> stopAndSaveRecording() async {
   final dir = await getExternalStorageDirectory();
+  if (dir == null) return;
 }
 
 void main() async {
