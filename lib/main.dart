@@ -1,17 +1,31 @@
+import 'dart:io';
+
 import 'package:call_recorder_sample/view/contact_selection_screen/contact_selection.dart';
 import 'package:call_recorder_sample/view/home_screen/home_screen.dart';
 import 'package:call_recorder_sample/view/recording_list/recording_list.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:path_provider/path_provider.dart';
 
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin();
+Future<void> stopAndSaveRecording() async {}
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   const AndroidInitializationSettings initializationSettingsAndroid =
       AndroidInitializationSettings('@mipmap/ic_launcher');
   final InitializationSettings initializationSettings =
       InitializationSettings(android: initializationSettingsAndroid);
+  await flutterLocalNotificationsPlugin.initialize(
+    initializationSettings,
+    onDidReceiveNotificationResponse: (NotificationResponse response) {
+      if (response.payload != null) {
+        stopAndSaveRecording(); // Implement this function
+      }
+    },
+  );
+
   runApp(const MyApp());
 }
 
