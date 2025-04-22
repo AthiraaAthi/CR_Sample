@@ -12,6 +12,7 @@ final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
 Future<void> stopAndSaveRecording() async {
   final dir = await getExternalStorageDirectory();
   if (dir == null) return;
+  final folder = Directory('${dir.path}/CallRecordings');
 }
 
 void main() async {
