@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -9,12 +8,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  @override
-  void initState() {
-    super.initState();
-    checkAndRequestContactsPermission();
-  }
-
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
@@ -36,16 +29,4 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ));
   }
-
-  Future<void> checkAndRequestContactsPermission() async {
-    PermissionStatus status = await Permission.contacts.status;
-    if (!status.isGranted) {
-      // Request permission if not granted
-      await Permission.contacts.request();
-    } else {
-      //loadContacts(); // If permission is granted, load contacts
-    }
-  }
-
-  Future<void> loadContacts() async {}
 }
