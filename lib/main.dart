@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:call_recorder_sample/view/contact_selection_screen/contact_selection.dart';
+import 'package:call_recorder_sample/view/contact_selection_screen/selected_contacts.dart';
 import 'package:call_recorder_sample/view/home_screen/home_screen.dart';
 import 'package:call_recorder_sample/view/recording_list/recording_list.dart';
 import 'package:flutter/cupertino.dart';
@@ -120,6 +121,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/contacts': (context) => ContactSelectionScreen(),
         '/recordings': (context) => RecordingListScreen(),
+        '/selectedContacts': (context) => SelectedContactsScreen(),
       },
     );
   }
