@@ -25,6 +25,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Text('View Recordings'),
                 onPressed: () => Navigator.pushNamed(context, '/recordings'),
               ),
+              CupertinoButton.filled(
+                child: Text('View Recordings'),
+                onPressed: () => Navigator.pushNamed(context, '/recordings'),
+              ),
             ],
           ),
         ));
