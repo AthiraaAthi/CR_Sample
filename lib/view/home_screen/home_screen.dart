@@ -46,4 +46,6 @@ class _HomeScreenState extends State<HomeScreen> {
       //loadContacts(); // If permission is granted, load contacts
     }
   }
+
+  Future<void> loadContacts() async {}
 }
