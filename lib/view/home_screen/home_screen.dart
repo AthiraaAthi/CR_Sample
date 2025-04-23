@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               SizedBox(height: 20),
               CupertinoButton.filled(
-                child: Text('View Recordings'),
+                child: Text('Selected Contacts'),
                 onPressed: () => Navigator.pushNamed(context, '/recordings'),
               ),
               CupertinoButton.filled(
