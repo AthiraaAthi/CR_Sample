@@ -49,6 +49,7 @@ class _SelectedContactsScreenState extends State<SelectedContactsScreen> {
                       vertical: 12.0, horizontal: 16.0),
                   child: Text(
                     selectedNumbers[index],
+                    style: TextStyle(fontSize: 18),
                   ),
                 );
               },
