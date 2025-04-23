@@ -1,25 +1,48 @@
 import 'dart:io';
-
 import 'package:call_recorder_sample/view/contact_selection_screen/contact_selection.dart';
 import 'package:call_recorder_sample/view/home_screen/home_screen.dart';
 import 'package:call_recorder_sample/view/recording_list/recording_list.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:flutter_sound/flutter_sound.dart';
 import 'package:path_provider/path_provider.dart';
 
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin();
-Future<void> stopAndSaveRecording() async {
+
+// Initialize FlutterSoundRecorder
+FlutterSoundRecorder _recorder = FlutterSoundRecorder();
+
+Future<void> startRecording() async {
+  // Request permissions and open recorder
+  await _recorder.openRecorder(); // Correct method for initializing recorder
+
+  // Get the directory where we will save the recording
   final dir = await getExternalStorageDirectory();
   if (dir == null) return;
+
   final folder = Directory('${dir.path}/CallRecordings');
   if (!await folder.exists()) {
     await folder.create(recursive: true);
   }
+
   final fileName = 'Recording_${DateTime.now().millisecondsSinceEpoch}.aac';
-  final file = File('${folder.path}/$fileName');
-  await file.writeAsBytes([]);
-  await flutterLocalNotificationsPlugin.cancel(0);
+  final filePath = '${folder.path}/$fileName';
+
+  // Start recording to the file
+  await _recorder.startRecorder(toFile: filePath);
+
+  // Show a notification that recording has started
+  showRecordingNotification(fileName);
+}
+
+Future<void> stopAndSaveRecording() async {
+  // Stop recording
+  String? filePath = await _recorder.stopRecorder();
+
+  if (filePath == null) return;
+
+  // Show notification indicating recording is saved
   const AndroidNotificationDetails androidPlatformChannelSpecifics =
       AndroidNotificationDetails(
     'recording_saved_channel',
@@ -28,19 +51,48 @@ Future<void> stopAndSaveRecording() async {
     importance: Importance.max,
     priority: Priority.high,
   );
+
   const NotificationDetails platformChannelSpecifics =
       NotificationDetails(android: androidPlatformChannelSpecifics);
 
   await flutterLocalNotificationsPlugin.show(
     1,
     'Recording Saved',
-    'Saved to: $fileName',
+    'Saved to: $filePath',
     platformChannelSpecifics,
+  );
+}
+
+Future<void> showRecordingNotification(String fileName) async {
+  const AndroidNotificationDetails androidDetails = AndroidNotificationDetails(
+    'recording_channel_id',
+    'Recording Notifications',
+    channelDescription: 'Shows recording status for ongoing calls',
+    importance: Importance.max,
+    priority: Priority.high,
+    ongoing: true,
+    autoCancel: false,
+    onlyAlertOnce: true,
+    playSound: false,
+  );
+
+  const NotificationDetails platformDetails = NotificationDetails(
+    android: androidDetails,
+  );
+
+  await flutterLocalNotificationsPlugin.show(
+    0,
+    'Recording in progress...',
+    'Saving to: $fileName',
+    platformDetails,
+    payload: 'stop_recording',
   );
 }
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize the notification plugin
   const AndroidInitializationSettings initializationSettingsAndroid =
       AndroidInitializationSettings('@mipmap/ic_launcher');
   final InitializationSettings initializationSettings =
