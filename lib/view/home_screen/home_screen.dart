@@ -15,16 +15,6 @@ class _HomeScreenState extends State<HomeScreen> {
     checkAndRequestContactsPermission();
   }
 
-  Future<void> checkAndRequestContactsPermission() async {
-    PermissionStatus status = await Permission.contacts.status;
-    if (!status.isGranted) {
-      // Request permission if not granted
-      await Permission.contacts.request();
-    } else {
-      //loadContacts(); // If permission is granted, load contacts
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
@@ -45,5 +35,15 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
         ));
+  }
+
+  Future<void> checkAndRequestContactsPermission() async {
+    PermissionStatus status = await Permission.contacts.status;
+    if (!status.isGranted) {
+      // Request permission if not granted
+      await Permission.contacts.request();
+    } else {
+      //loadContacts(); // If permission is granted, load contacts
+    }
   }
 }
