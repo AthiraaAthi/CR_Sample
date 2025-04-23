@@ -47,6 +47,9 @@ class _SelectedContactsScreenState extends State<SelectedContactsScreen> {
                 return Padding(
                   padding: const EdgeInsets.symmetric(
                       vertical: 12.0, horizontal: 16.0),
+                  child: Text(
+                    selectedNumbers[index],
+                  ),
                 );
               },
             ),
