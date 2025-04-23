@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -11,6 +12,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
+  }
+
+  Future<void> checkAndRequestContactsPermission() async {
+    PermissionStatus status = await Permission.contacts.status;
   }
 
   @override
