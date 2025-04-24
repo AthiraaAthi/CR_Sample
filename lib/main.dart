@@ -133,6 +133,7 @@ void main() async {
       }
     },
   );
+  listenForIncomingCalls(); //////////3. CALL SIMULATION ADDED
 
   runApp(const MyApp());
 }
