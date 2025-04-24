@@ -25,7 +25,9 @@ Future<List<String>> getSelectedNumbers() async {
 void listenForIncomingCalls() async {
   final selectedNumbers = await getSelectedNumbers();
   // Simulating an incoming call
-  Future.delayed(Duration(seconds: 3), () async {});
+  Future.delayed(Duration(seconds: 3), () async {
+    String incomingNumber = ""; // Simulated number
+  });
 }
 
 Future<void> startRecording() async {
