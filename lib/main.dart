@@ -37,6 +37,7 @@ void listenForIncomingCalls() async {
   });
   Future.delayed(Duration(seconds: 10), () async {
     print("DEBUG: Ending call, stopping recording...");
+    await stopAndSaveRecording();
   });
 }
 
