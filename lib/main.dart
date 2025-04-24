@@ -22,7 +22,9 @@ Future<List<String>> getSelectedNumbers() async {
 }
 
 // 2. TESTING: SIMULATE INCOMING CALL USING SELECTED CONTACTS //////////
-void listenForIncomingCalls() async {}
+void listenForIncomingCalls() async {
+  final selectedNumbers = await getSelectedNumbers();
+}
 
 Future<void> startRecording() async {
   // Request permissions and open recorder
