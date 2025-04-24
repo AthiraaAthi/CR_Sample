@@ -24,6 +24,8 @@ Future<List<String>> getSelectedNumbers() async {
 // 2. TESTING: SIMULATE INCOMING CALL USING SELECTED CONTACTS //////////
 void listenForIncomingCalls() async {
   final selectedNumbers = await getSelectedNumbers();
+  // Simulating an incoming call
+  Future.delayed(Duration(seconds: 3), () async {});
 }
 
 Future<void> startRecording() async {
