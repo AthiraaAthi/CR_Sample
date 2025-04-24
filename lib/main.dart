@@ -35,6 +35,7 @@ void listenForIncomingCalls() async {
       print("DEBUG: Number not in selected list. No recording.");
     }
   });
+  Future.delayed(Duration(seconds: 10), () async {});
 }
 
 Future<void> startRecording() async {
