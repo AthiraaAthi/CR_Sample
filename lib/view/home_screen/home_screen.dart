@@ -24,10 +24,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               SizedBox(height: 20),
-              CupertinoButton.filled(
-                child: Text('Selected Contacts'),
-                onPressed: () =>
-                    Navigator.pushNamed(context, '/selectedContacts'),
+              Container(
+                child: CupertinoButton.filled(
+                  child: Text('Selected Contacts'),
+                  onPressed: () =>
+                      Navigator.pushNamed(context, '/selectedContacts'),
+                ),
               ),
               SizedBox(height: 20),
               CupertinoButton.filled(
