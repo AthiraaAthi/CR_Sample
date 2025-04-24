@@ -7,12 +7,19 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_sound/flutter_sound.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin();
 
 // Initialize FlutterSoundRecorder
 FlutterSoundRecorder _recorder = FlutterSoundRecorder();
+
+// FUNCTION TO GET SELECTED NUMBERS FROM SHARED PREFERENCES //////////
+Future<List<String>> getSelectedNumbers() async {
+  final prefs = await SharedPreferences.getInstance();
+  return prefs.getStringList('record_contacts') ?? [];
+}
 
 Future<void> startRecording() async {
   // Request permissions and open recorder
