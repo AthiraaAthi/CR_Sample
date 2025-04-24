@@ -20,6 +20,7 @@ Future<List<String>> getSelectedNumbers() async {
   final prefs = await SharedPreferences.getInstance();
   return prefs.getStringList('record_contacts') ?? [];
 }
+//////1.end///////
 
 // 2. TESTING: SIMULATE INCOMING CALL USING SELECTED CONTACTS //////////
 void listenForIncomingCalls() async {
@@ -40,6 +41,7 @@ void listenForIncomingCalls() async {
     await stopAndSaveRecording();
   });
 }
+//////////end/////////
 
 Future<void> startRecording() async {
   // Request permissions and open recorder
