@@ -27,6 +27,13 @@ void listenForIncomingCalls() async {
   // Simulating an incoming call
   Future.delayed(Duration(seconds: 3), () async {
     String incomingNumber = ""; // Simulated number
+    if (selectedNumbers.contains(incomingNumber)) {
+      print("DEBUG: Number is in selected list. Starting recording...");
+      await startRecording();
+      showRecordingNotification("Recording call from $incomingNumber");
+    } else {
+      print("DEBUG: Number not in selected list. No recording.");
+    }
   });
 }
 
