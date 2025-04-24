@@ -16,9 +16,12 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              CupertinoButton.filled(
-                child: Text('Select Contacts to Auto-Record'),
-                onPressed: () => Navigator.pushNamed(context, '/contacts'),
+              Container(
+                height: 100,
+                child: CupertinoButton.filled(
+                  child: Text('Select Contacts to Auto-Record'),
+                  onPressed: () => Navigator.pushNamed(context, '/contacts'),
+                ),
               ),
               SizedBox(height: 20),
               CupertinoButton.filled(
