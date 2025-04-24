@@ -15,11 +15,14 @@ final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
 // Initialize FlutterSoundRecorder
 FlutterSoundRecorder _recorder = FlutterSoundRecorder();
 
-// FUNCTION TO GET SELECTED NUMBERS FROM SHARED PREFERENCES //////////
+//1. FUNCTION TO GET SELECTED NUMBERS FROM SHARED PREFERENCES //////////
 Future<List<String>> getSelectedNumbers() async {
   final prefs = await SharedPreferences.getInstance();
   return prefs.getStringList('record_contacts') ?? [];
 }
+
+// 2. TESTING: SIMULATE INCOMING CALL USING SELECTED CONTACTS //////////
+void listenForIncomingCalls() async {}
 
 Future<void> startRecording() async {
   // Request permissions and open recorder
