@@ -25,7 +25,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               SizedBox(height: 20),
               Container(
-                height: 100,
+                height: 92,
+                width: 250,
                 child: CupertinoButton.filled(
                   child: Text('Selected Contacts'),
                   onPressed: () =>
